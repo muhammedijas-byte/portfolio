@@ -1,43 +1,45 @@
+
 const text = [
-"Python Full Stack Developer",
-"Backend Developer",
-"AI Enthusiast",
-"Machine Learning Developer"
+    "Python Full Stack Developer",
+    "Backend Developer",
+    "Software Engineer Intern",
+    "AI Enthusiast",
+    "Machine Learning Developer"
 ];
 
 let index = 0;
 let char = 0;
 
-function typeEffect(){
+function typeEffect() {
 
-const typing = document.getElementById("typing");
+    const typing = document.getElementById("typing");
 
-if(char < text[index].length){
+    if (char < text[index].length) {
 
-typing.innerHTML += text[index].charAt(char);
+        typing.innerHTML += text[index].charAt(char);
 
-char++;
+        char++;
 
-setTimeout(typeEffect,100);
+        setTimeout(typeEffect, 100);
 
-}else{
+    } else {
 
-setTimeout(() => {
+        setTimeout(() => {
 
-typing.innerHTML = "";
+            typing.innerHTML = "";
 
-char = 0;
+            char = 0;
 
-index++;
+            index++;
 
-if(index === text.length){
-index = 0;
-}
+            if (index === text.length) {
+                index = 0;
+            }
 
-typeEffect();
+            typeEffect();
 
-},1500);
-}
+        }, 1500);
+    }
 }
 
 typeEffect();
